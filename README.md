@@ -8,4 +8,11 @@ This is a sample e-commerce application built for learning purposes
 
 🚧 In Progress 
 
+Attempting the Kubernetes Challenge by KodeKloud - https://kodekloud.com/courses/kubernetes-challenges/
+
 View Dockerfile and mainfests folder for the kubernetes resource definitions files ! 
+
+Goals: 
+
+1. Deploy on AWS EKS
+2. Implement CI/CD for containerizing applicaition
