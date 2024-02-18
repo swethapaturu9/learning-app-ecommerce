@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-deployed
+  labels:
+    app: php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php
+  template:
+    metadata:
+      labels:
+        app: php
+    spec:
+      containers:
+      - name: ecommerce-application
+        image: swethapaturu/ecom-web:v1
+        ports:
+        - containerPort: 80
+        env:
+          - name: DB_HOST
+            value: mysql-service
+          - name: DB_USER
+            value: ecomuser
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: password
+          - name: DB_NAME
+            value: ecomdb
